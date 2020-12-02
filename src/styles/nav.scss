@@ -1,0 +1,15 @@
+.nav-container {
+  margin: 80px;
+  .nav-title {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  .nav-icons {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+}

@@ -1,0 +1,21 @@
+@import './nav.scss';
+@import './dashboard.scss';
+@import './animation.scss';
+@import './info.scss';
+@import './chat.scss';
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+}
+
+#root {
+  margin: 0;
+}
+
+.App {
+  font-family: 'Spartan', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
