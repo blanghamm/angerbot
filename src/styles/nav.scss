@@ -1,5 +1,12 @@
 .nav-container {
   margin: 80px;
+  .nav-selector {
+    width: 7px;
+    height: 30px;
+    background-color: $accent-color;
+    z-index: 2;
+    border-radius: 50px;
+  }
   .nav-title {
     font-family: 'Spartan', sans-serif;
     font-weight: bold;
@@ -10,6 +17,42 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 130px;
+    margin-bottom: 130px;
+    :active {
+      background-color: pink;
+    }
+    .chat-circle-icon {
+      color: #000000;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+    .info-icon {
+      color: #000000;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+    .link-icon {
+      color: #000000;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+    .trash-icon {
+      color: #000000;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $accent-color;
+      }
+    }
   }
 }

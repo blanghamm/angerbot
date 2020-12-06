@@ -8,7 +8,7 @@ import {
   Link as LinkIcon,
 } from 'phosphor-react';
 
-const Navigation = ({ setNav }) => {
+const Navigation = ({ setMessages }) => {
   return (
     <div className='nav-container'>
       <div className='nav-title'>
@@ -18,23 +18,41 @@ const Navigation = ({ setNav }) => {
         <br />
         v1
       </div>
+
       <div className='nav-icons'>
-        <Link href='/' onClick={() => setNav(true)}>
+        <Link href='/'>
+          <div className='nav-selector' />
           <ChatCircleText
-            color='#000000'
+            className='chat-circle-icon'
             weight='bold'
             size={32}
             cursor='pointer'
           />
         </Link>
-        <Link href='/info' onClick={() => setNav(false)}>
-          <InfoIcon color='#000000' weight='bold' size={32} cursor='pointer' />
+        <Link href='/info'>
+          <InfoIcon
+            className='info-icon'
+            weight='bold'
+            size={32}
+            cursor='pointer'
+          />
         </Link>
         <a target='_blank' rel='noreferrer' href='https://www.google.co.uk/'>
-          <LinkIcon color='#000000' weight='bold' size={32} cursor='pointer' />
+          <LinkIcon
+            className='link-icon'
+            weight='bold'
+            size={32}
+            cursor='pointer'
+          />
         </a>
-        <Link href='/reload'>
-          <Trash color='#000000' weight='bold' size={32} cursor='pointer' />
+        <Link href='/reload' onClick={() => setMessages([])}>
+          <Trash
+            className='trash-icon'
+            weight='bold'
+            size={32}
+            cursor='pointer'
+            onMouseEnter={() => console.log('hi')}
+          />
         </Link>
       </div>
     </div>
@@ -42,7 +60,7 @@ const Navigation = ({ setNav }) => {
 };
 
 Navigation.propTypes = {
-  setNav: PropTypes.func.isRequired,
+  setMessages: PropTypes.func.isRequired,
 };
 
 export default Navigation;
