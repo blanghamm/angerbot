@@ -55,9 +55,9 @@
       border: none;
       width: 320px;
       height: 60px;
-      background-color: #f6f6f6;
+      background-color: $off-grey;
       outline: 0;
-      font-weight: bold;
+      font-weight: normal;
       color: black;
     }
     .chat-send {
@@ -67,10 +67,10 @@
       border-radius: 50%;
       border: none;
       outline: 0;
-      background-color: #f6f6f6;
+      background-color: $off-grey;
       .chat-send-icon {
         margin: auto;
-        color: #ef798a;
+        color: $accent-color;
       }
     }
   }

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Route, Redirect } from 'wouter';
+import { Route, Redirect } from 'react-router-dom';
 import Navigation from './Navigation';
 import ChatTest from '../components/ChatTest';
 import Animation from './Animation';
 import Info from './Info';
 
 const Dashboard = () => {
-  // const [nav, setNav] = useState(true);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
 
@@ -58,7 +57,7 @@ const Dashboard = () => {
           <Info />
         </Route>
         <Route path='/reload' key='reload'>
-          <Redirect href='/' />
+          <Redirect to='/' />
         </Route>
 
         <Animation />

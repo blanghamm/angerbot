@@ -1,5 +1,18 @@
 .info-container {
   width: 412px;
   height: 60vh;
-  background-color: pink;
+  background-color: $off-grey;
+  border-radius: 50px;
+  .info-inner-container {
+    margin: 30px 50px 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  // .info-title {
+  //   margin-b: 5px;
+  // }
+  // .info-para {
+  //   margin: 5px;
+  // }
 }

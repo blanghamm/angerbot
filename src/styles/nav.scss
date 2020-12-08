@@ -1,8 +1,18 @@
+.nav-icons-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  margin-top: 130px;
+  margin-bottom: 130px;
+}
 .nav-container {
   margin: 80px;
-  .nav-selector {
+  .nav-selector-bar {
     width: 7px;
     height: 30px;
+    margin-right: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     background-color: $accent-color;
     z-index: 2;
     border-radius: 50px;
@@ -17,42 +27,37 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 130px;
-    margin-bottom: 130px;
-    :active {
-      background-color: pink;
-    }
     .chat-circle-icon {
       color: #000000;
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
-      &:hover {
-        color: $accent-color;
-      }
+      // &:hover {
+      //   color: $accent-color;
+      // }
     }
     .info-icon {
       color: #000000;
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
-      &:hover {
-        color: $accent-color;
-      }
+      // &:hover {
+      //   color: $accent-color;
+      // }
     }
     .link-icon {
       color: #000000;
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
-      &:hover {
-        color: $accent-color;
-      }
+      // &:hover {
+      //   color: $accent-color;
+      // }
     }
     .trash-icon {
       color: #000000;
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
-      &:hover {
-        color: $accent-color;
-      }
+      // &:hover {
+      //   color: $accent-color;
+      // }
     }
   }
 }
