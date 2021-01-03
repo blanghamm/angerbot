@@ -5,6 +5,9 @@ import Chat from '../Chat';
 import Animation from '../Animation';
 import Info from '../Info';
 
+// eslint-disable-next-line no-undef
+const BASE_URL = process.env.REACT_APP_ANGERBOT_API_URL;
+
 const Dashboard = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
@@ -20,10 +23,7 @@ const Dashboard = () => {
   // eslint-disable-next-line no-unused-vars
   function fetchAPIQuery() {
     try {
-      fetch(
-        'https://angerbotflow.eu-gb.cf.appdomain.cloud/testing',
-        requestOptions
-      )
+      fetch(BASE_URL, requestOptions)
         .then((response) => response.json())
         .then((data) =>
           setMessages((messages) => [
