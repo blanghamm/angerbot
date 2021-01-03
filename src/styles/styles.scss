@@ -1,10 +1,11 @@
 $accent-color: #ef798a;
 $off-grey: #f6f6f6;
-@import './nav.scss';
-@import './dashboard.scss';
-@import './animation.scss';
-@import './info.scss';
-@import './chat.scss';
+@import '../components/Navigation/nav.scss';
+@import '../components/Dashboard/dashboard.scss';
+@import '../components/Animation/animation.scss';
+@import '../components/Info/info.scss';
+@import '../components/Chat/chat.scss';
+@import '../components/Messages/messages.scss';
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
 
 body {

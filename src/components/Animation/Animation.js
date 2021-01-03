@@ -1,5 +1,5 @@
 import React from 'react';
-import character from '../assets/Junior.png';
+import character from '../../assets/Junior.png';
 
 const Animation = () => {
   return (

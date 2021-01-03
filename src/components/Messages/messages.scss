@@ -1,0 +1,42 @@
+$message-grey: #c4c4c4;
+
+.message-container {
+  display: flex;
+  padding: 10px;
+  border-radius: 25px;
+  line-height: 1.6;
+  .message-content {
+    color: black;
+    font-weight: 200;
+    font-size: small;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+.message-container.-user {
+  display: flex;
+  align-self: flex-end;
+  overflow-wrap: break-word;
+  max-width: 50%;
+  word-wrap: break-word;
+  margin: 15px;
+  background-color: $accent-color;
+}
+
+.message-container.-robot {
+  display: flex;
+  justify-content: flex-start;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 50%;
+  margin: 15px;
+  background-color: $message-grey;
+}

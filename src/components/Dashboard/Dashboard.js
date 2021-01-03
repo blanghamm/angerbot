@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Navigation from './Navigation';
-import ChatTest from '../components/ChatTest';
-import Animation from './Animation';
-import Info from './Info';
+import Navigation from '../Navigation';
+import Chat from '../Chat';
+import Animation from '../Animation';
+import Info from '../Info';
 
 const Dashboard = () => {
   const [input, setInput] = useState('');
@@ -28,7 +28,7 @@ const Dashboard = () => {
         .then((data) =>
           setMessages((messages) => [
             ...messages,
-            { text: data[1].output.generic[0].text },
+            { robotText: data[1].output.generic[0].text, userInput: false },
           ])
         );
     } catch {
@@ -38,7 +38,10 @@ const Dashboard = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchAPIQuery();
-    setMessages((messages) => [...messages, { text: input }]);
+    setMessages((messages) => [
+      ...messages,
+      { userText: input, userInput: true },
+    ]);
     setInput('');
   };
   return (
@@ -46,7 +49,7 @@ const Dashboard = () => {
       <Navigation setMessages={setMessages} />
       <div className='dashboard-content'>
         <Route exact path='/'>
-          <ChatTest
+          <Chat
             setInput={setInput}
             handleSubmit={handleSubmit}
             input={input}

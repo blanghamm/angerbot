@@ -10,7 +10,7 @@ import {
 import { motion } from 'framer-motion';
 
 const Navigation = ({ setMessages }) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(true);
   const spring = {
     type: 'spring',
     stiffness: 700,
@@ -28,17 +28,12 @@ const Navigation = ({ setMessages }) => {
 
       <div className='nav-icons-container'>
         <motion.div
-          animate={{ y: selected ? '0' : '121px' }}
+          animate={{ y: selected ? '0px' : '242px' }}
           className='nav-selector-bar'
           transition={spring}
         />
         <div className='nav-icons'>
-          <NavLink
-            to='/'
-            isActive={(match) => {
-              match ? setSelected(true) : null;
-            }}
-          >
+          <NavLink to='/' isActive={(match) => match && setSelected(true)}>
             <ChatCircleText
               className='chat-circle-icon'
               weight='bold'
@@ -46,12 +41,16 @@ const Navigation = ({ setMessages }) => {
               cursor='pointer'
             />
           </NavLink>
-          <NavLink
-            to='/info'
-            isActive={(match) => {
-              match ? setSelected(false) : null;
-            }}
-          >
+          <NavLink to='/reload' onClick={() => setMessages([])}>
+            <Trash
+              className='trash-icon'
+              weight='bold'
+              size={32}
+              cursor='pointer'
+              onMouseEnter={() => console.log('hi')}
+            />
+          </NavLink>
+          <NavLink to='/info' isActive={(match) => match && setSelected(false)}>
             <InfoIcon
               className='info-icon'
               weight='bold'
@@ -67,15 +66,6 @@ const Navigation = ({ setMessages }) => {
               cursor='pointer'
             />
           </a>
-          <NavLink to='/reload' onClick={() => setMessages([])}>
-            <Trash
-              className='trash-icon'
-              weight='bold'
-              size={32}
-              cursor='pointer'
-              onMouseEnter={() => console.log('hi')}
-            />
-          </NavLink>
         </div>
       </div>
     </div>
