@@ -42,5 +42,5 @@
     "eslint": "^7.13.0",
     "eslint-plugin-react": "^7.21.5"
   },
-  "proxy": "https://angerbotflow.eu-gb.cf.appdomain.cloud/"
+  "proxy": "https://angerbotflow.eu-gb.cf.appdomain.cloud"
 }

@@ -6,7 +6,7 @@
   height: 60vh;
   .chat-messages {
     border-radius: 50px;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 430px;
     background-color: #f3f3f3;
     .chat-messages-inner {
@@ -27,6 +27,9 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  .chat-messages::-webkit-scrollbar {
+    display: none;
   }
   .chat-bottom {
     justify-content: space-between;
