@@ -21,11 +21,12 @@ const Chat = ({ setInput, handleSubmit, input, messages }) => {
       <form className='chat-bottom' onSubmit={handleSubmit}>
         <input
           className='chat-text-input'
-          placeholder='Aa'
+          placeholder='Type to begin...'
           type='text'
           onChange={(e) => setInput(e.target.value)}
           value={input}
           required={true}
+          autoFocus
         ></input>
         <button className='chat-send' type='submit' disabled={!input}>
           {!input ? (
