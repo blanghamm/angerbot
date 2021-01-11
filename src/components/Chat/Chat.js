@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { PaperPlaneTilt } from 'phosphor-react';
-import Messages from '../Messages';
-const Chat = ({ setInput, handleSubmit, input, messages }) => {
+import Messages from './Messages';
+import Suggestions from './Suggestions';
+
+const Chat = ({ setInput, handleSubmit, input, messages, options }) => {
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -16,6 +18,9 @@ const Chat = ({ setInput, handleSubmit, input, messages }) => {
             <Messages key={index} message={messages} />
           ))}
         </div>
+        {options.map((option, index) => (
+          <Suggestions key={index} option={option} setInput={setInput} />
+        ))}
         <div ref={messagesEndRef} />
       </div>
       <form className='chat-bottom' onSubmit={handleSubmit}>
@@ -55,6 +60,7 @@ Chat.propTypes = {
   handleSubmit: PropTypes.func,
   input: PropTypes.string,
   messages: PropTypes.array,
+  options: PropTypes.array,
 };
 
 export default Chat;

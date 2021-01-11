@@ -11,6 +11,7 @@ const BASE_URL = process.env.REACT_APP_ANGERBOT_API_URL;
 const Dashboard = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
+  const [options, setOptions] = useState([]);
 
   const requestOptions = {
     crossDomain: true,
@@ -23,17 +24,23 @@ const Dashboard = () => {
     },
     body: JSON.stringify([{ text: input }]),
   };
+
+  const addData = (data) => {
+    setMessages((messages) => [
+      ...messages,
+      { robotText: data[1].output.generic[0].text, userInput: false },
+    ]);
+    if (data[1].output.generic[1].options) {
+      const filteredOptions = data[1].output.generic[1].options;
+      setOptions(filteredOptions);
+    }
+  };
   // eslint-disable-next-line no-unused-vars
   function fetchAPIQuery() {
     try {
       fetch(BASE_URL, requestOptions)
         .then((response) => response.json())
-        .then((data) =>
-          setMessages((messages) => [
-            ...messages,
-            { robotText: data[1].output.generic[0].text, userInput: false },
-          ])
-        );
+        .then((data) => addData(data));
     } catch {
       (e) => console.log(e);
     }
@@ -57,6 +64,7 @@ const Dashboard = () => {
             handleSubmit={handleSubmit}
             input={input}
             messages={messages}
+            options={options}
           />
         </Route>
         <Route path='/info'>
