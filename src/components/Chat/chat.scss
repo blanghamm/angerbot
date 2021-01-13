@@ -1,9 +1,9 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 412px;
-  height: 60vh;
+  height: 600px;
   .chat-messages {
     border-radius: 50px;
     overflow-y: scroll;
@@ -31,6 +31,19 @@
   .chat-messages::-webkit-scrollbar {
     display: none;
   }
+  .chat-suggestions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60px;
+    width: 412px;
+    margin: 20px 0 20px 0;
+    .chat-suggestions-inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
   .chat-bottom {
     justify-content: space-between;
     display: flex;
@@ -38,7 +51,6 @@
     align-items: center;
     .chat-text-input {
       line-height: 1.6;
-      margin: auto;
       overflow: scroll;
       outline: 0;
       border: none;
@@ -48,8 +60,7 @@
       width: 320px;
       min-height: 60px;
       background-color: $off-grey;
-      font-weight: normal;
-      color: black;
+      font-weight: 200;
     }
     .chat-send {
       display: flex;

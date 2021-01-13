@@ -5,7 +5,8 @@ $off-grey: #f6f6f6;
 @import '../components/Animation/animation.scss';
 @import '../components/Info/info.scss';
 @import '../components/Chat/chat.scss';
-@import '../components/Messages/messages.scss';
+@import '../components/Chat/Messages/messages.scss';
+@import '../components/Chat/Suggestions/suggestions.scss';
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
 
 body {

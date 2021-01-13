@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Chat from '../Chat';
@@ -12,6 +12,7 @@ const Dashboard = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [options, setOptions] = useState([]);
+  console.log(messages);
 
   const requestOptions = {
     crossDomain: true,
@@ -28,13 +29,15 @@ const Dashboard = () => {
   const addData = (data) => {
     setMessages((messages) => [
       ...messages,
-      { robotText: data[1].output.generic[0].text, userInput: false },
+      {
+        robotText: data.map((_, index) => data[1].output.generic[index].text),
+        userInput: false,
+      },
     ]);
-    if (data[1].output.generic[1].options) {
-      const filteredOptions = data[1].output.generic[1].options;
-      setOptions(filteredOptions);
-    }
+    const filteredOptions = data[1].output.generic[1];
+    filteredOptions ? setOptions(filteredOptions.options) : setOptions([]);
   };
+
   // eslint-disable-next-line no-unused-vars
   function fetchAPIQuery() {
     try {
@@ -54,6 +57,22 @@ const Dashboard = () => {
     ]);
     setInput('');
   };
+
+  const handleSuggestions = (input) => {
+    setInput(input);
+    fetchAPIQuery();
+    setMessages((messages) => [
+      ...messages,
+      { userText: input, userInput: true },
+    ]);
+    setInput('');
+    setOptions([]);
+  };
+
+  useEffect(() => {
+    fetchAPIQuery();
+  }, []);
+
   return (
     <div className='dashboard'>
       <Navigation setMessages={setMessages} />
@@ -62,6 +81,7 @@ const Dashboard = () => {
           <Chat
             setInput={setInput}
             handleSubmit={handleSubmit}
+            handleSuggestions={handleSuggestions}
             input={input}
             messages={messages}
             options={options}
