@@ -30,7 +30,7 @@ const Dashboard = () => {
     setMessages((messages) => [
       ...messages,
       {
-        robotText: data.map((_, index) => data[1].output.generic[index].text),
+        robotText: data[1].output.generic[0].text,
         userInput: false,
       },
     ]);
