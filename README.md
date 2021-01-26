@@ -18,38 +18,36 @@ _As the user, you will currently be given a number of options throughout, you ma
 
 Anger Bot: Welcome Message<br/>
 User:<br/>
-
-- What are you?<br/>
-- What’s your purpose?<br/>
-- Are you real?<br/>
-- How does this work?<br/>
-  Anger Bot: Message<br/>
-  User:<br/>
-
-* How rude<br/>
-* You’re cheery<br/>
-* Miserable bastard<br/>
-  Anger Bot: Message<br/>
-  User:<br/>
-* Wait is that HAL?<br/>
-* Is that a HAL reference?<br/>
-* Are you HAL 9000?<br/>
-* Dave? You’re not very smart<br/>
-* Who the hell is dave<br/>
-* You suck<br/>
-* You’re a shitty robot<br/>
-* You’re shit<br/>
-* You’re shit to talk to<br/>
-* You’re terrible<br/>
-  Anger Bot: Message<br/>
-  User:<br/>
-* Fuck off<br/>
-* Fuck you<br/>
-* Hahaha you fucking idiot<br/>
-* Shut the fuck up<br/>
-* Stupid fucking robot<br/>
-* You fucking suck<br/>
-* You’re fucking boring<br/>
-  Anger Bot: Message<br/>
+  * What are you?<br/>
+  * What’s your purpose?<br/>
+  * Are you real?<br/>
+  * How does this work?<br/>
+Anger Bot: Message<br/>
+User:<br/>
+  * How rude<br/>
+  * You’re cheery<br/>
+  * Miserable bastard<br/>
+Anger Bot: Message<br/>
+User:<br/>
+  * Wait is that HAL?<br/>
+  * Is that a HAL reference?<br/>
+  * Are you HAL 9000?<br/>
+  * Dave? You’re not very smart<br/>
+  * Who the hell is dave<br/>
+  * You suck<br/>
+  * You’re a shitty robot<br/>
+  * You’re shit<br/>
+  * You’re shit to talk to<br/>
+  * You’re terrible<br/>
+Anger Bot: Message<br/>
+User:<br/>
+  * Fuck off<br/>
+  * Fuck you<br/>
+  * Hahaha you fucking idiot<br/>
+  * Shut the fuck up<br/>
+  * Stupid fucking robot<br/>
+  * You fucking suck<br/>
+  * You’re fucking boring<br/>
+Anger Bot: Message<br/>
 
 End of script<br/>
