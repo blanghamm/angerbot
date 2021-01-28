@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [options, setOptions] = useState([]);
-  console.log(messages);
+  const [intent, setIntent] = useState([]);
 
   const requestOptions = {
     crossDomain: true,
@@ -34,6 +34,15 @@ const Dashboard = () => {
         userInput: false,
       },
     ]);
+    const toneIntent = data[0].tones[0];
+    toneIntent
+      ? setIntent([
+          {
+            intentDesc: data[0].tones[0].tone_id,
+          },
+        ])
+      : setIntent([]);
+
     const filteredOptions = data[1].output.generic[1];
     filteredOptions ? setOptions(filteredOptions.options) : setOptions([]);
   };
@@ -94,7 +103,7 @@ const Dashboard = () => {
           <Redirect to='/' />
         </Route>
 
-        <Animation />
+        <Animation intent={intent} />
       </div>
     </div>
   );
