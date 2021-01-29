@@ -69,11 +69,11 @@ const Dashboard = () => {
 
   const handleSuggestions = (input) => {
     setInput(input);
-    fetchAPIQuery();
     setMessages((messages) => [
       ...messages,
       { userText: input, userInput: true },
     ]);
+    fetchAPIQuery();
     setInput('');
     setOptions([]);
   };
