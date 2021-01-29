@@ -58,7 +58,11 @@ const Navigation = ({ setMessages }) => {
               cursor='pointer'
             />
           </NavLink>
-          <a target='_blank' rel='noreferrer' href='https://www.google.co.uk/'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://benlangham-hackspace-individual.tumblr.com/'
+          >
             <LinkIcon
               className='link-icon'
               weight='bold'
